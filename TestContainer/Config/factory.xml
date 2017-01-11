@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object id="staticFactoryObject" type="TestContainer.TestGenericObjectFactory, TestContainer"
+          factory-method ="TestContainer.TestGenericObjectFactory&lt;int, string>">
+  </object>
+
+  <object id="Factory" type="TestContainer.TestGenericObjectFactory&lt;int, string>, TestContainer">
+  </object>
+
+  <object id="FactoryObject" factory-object="Factory"
+          factory-method="CreateInstance&lt;System.Collections.Generic.List&lt;int>,int>">
+    
+  </object>
+</objects>

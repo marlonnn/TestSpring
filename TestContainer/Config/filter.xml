@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object id="filterList" type="TestContainer.FilterableList&lt;int>, TestContainer">
+    <property name="Name" value="My Integer List"/>
+  </object>
+</objects>

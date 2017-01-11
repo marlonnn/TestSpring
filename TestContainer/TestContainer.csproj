@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D16187A-CE61-4CFB-9077-FC8C1DB66A30}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestContainer</RootNamespace>
+    <AssemblyName>TestContainer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Spring.Core, Version=0.0.0.35000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=0.0.0.35000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\HibernateItemDao.cs" />
+    <Compile Include="FactoryObject\Person.cs" />
+    <Compile Include="FactoryObject\Person1.cs" />
+    <Compile Include="FactoryObject\XmlObjectFactoryTests.cs" />
+    <Compile Include="FilterableList.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dao\HibernateAccountDao.cs" />
+    <Compile Include="LookUpMethod\MyClass1.cs" />
+    <Compile Include="LookUpMethod\SingleShotHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PetStoreService.cs" />
+    <Compile Include="SpringHelper.cs" />
+    <Compile Include="TestGenericObject.cs" />
+    <Compile Include="TestGenericObjectFactory.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\daos.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\factoryObject.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\factory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\look_up.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\filter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\services.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Lib\Apache.NMS.ActiveMQ.dll" />
+    <Content Include="Lib\Apache.NMS.ActiveMQ.xml" />
+    <Content Include="Lib\Apache.NMS.dll" />
+    <Content Include="Lib\Apache.NMS.xml" />
+    <Content Include="Lib\Common.Logging.Core.dll" />
+    <Content Include="Lib\Common.Logging.dll" />
+    <Content Include="Lib\Iesi.Collections.dll" />
+    <Content Include="Lib\Ionic.Zlib.dll" />
+    <Content Include="Lib\log4net.dll" />
+    <Content Include="Lib\NHibernate.dll" />
+    <Content Include="Lib\nunit.framework.dll" />
+    <Content Include="Lib\nunit.framework.xml" />
+    <Content Include="Lib\NUnitAsp.dll" />
+    <Content Include="Lib\NUnitAspEx.dll" />
+    <Content Include="Lib\NUnitAspEx.xml" />
+    <Content Include="Lib\NVelocity.dll" />
+    <Content Include="Lib\Quartz.dll" />
+    <Content Include="Lib\Rhino.Mocks.dll" />
+    <Content Include="Lib\Rhino.Mocks.xml" />
+    <Content Include="Lib\Spring.Aop.dll" />
+    <Content Include="Lib\Spring.Aop.pdb" />
+    <Content Include="Lib\Spring.Aop.xml" />
+    <Content Include="Lib\Spring.Core.dll" />
+    <Content Include="Lib\Spring.Core.pdb" />
+    <Content Include="Lib\Spring.Core.xml" />
+    <Content Include="Lib\Spring.Data.dll" />
+    <Content Include="Lib\Spring.Data.NHibernate3.dll" />
+    <Content Include="Lib\Spring.Data.NHibernate3.pdb" />
+    <Content Include="Lib\Spring.Data.NHibernate3.xml" />
+    <Content Include="Lib\Spring.Data.pdb" />
+    <Content Include="Lib\Spring.Data.xml" />
+    <Content Include="Lib\Spring.Messaging.dll" />
+    <Content Include="Lib\Spring.Messaging.Nms.dll" />
+    <Content Include="Lib\Spring.Messaging.Nms.pdb" />
+    <Content Include="Lib\Spring.Messaging.Nms.xml" />
+    <Content Include="Lib\Spring.Messaging.pdb" />
+    <Content Include="Lib\Spring.Messaging.xml" />
+    <Content Include="Lib\Spring.Scheduling.Quartz2.dll" />
+    <Content Include="Lib\Spring.Scheduling.Quartz2.pdb" />
+    <Content Include="Lib\Spring.Scheduling.Quartz2.xml" />
+    <Content Include="Lib\Spring.Services.dll" />
+    <Content Include="Lib\Spring.Services.pdb" />
+    <Content Include="Lib\Spring.Services.xml" />
+    <Content Include="Lib\Spring.Template.Velocity.Castle.dll" />
+    <Content Include="Lib\Spring.Template.Velocity.Castle.pdb" />
+    <Content Include="Lib\Spring.Template.Velocity.Castle.xml" />
+    <Content Include="Lib\Spring.Template.Velocity.dll" />
+    <Content Include="Lib\Spring.Template.Velocity.pdb" />
+    <Content Include="Lib\Spring.Template.Velocity.xml" />
+    <Content Include="Lib\Spring.Testing.NUnit.dll" />
+    <Content Include="Lib\Spring.Testing.NUnit.pdb" />
+    <Content Include="Lib\Spring.Testing.NUnit.xml" />
+    <Content Include="Lib\Spring.Web.Conversation.NHibernate3.dll" />
+    <Content Include="Lib\Spring.Web.Conversation.NHibernate3.pdb" />
+    <Content Include="Lib\Spring.Web.Conversation.NHibernate3.xml" />
+    <Content Include="Lib\Spring.Web.dll" />
+    <Content Include="Lib\Spring.Web.Extensions.dll" />
+    <Content Include="Lib\Spring.Web.Extensions.pdb" />
+    <Content Include="Lib\Spring.Web.Extensions.xml" />
+    <Content Include="Lib\Spring.Web.pdb" />
+    <Content Include="Lib\Spring.Web.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object id="person1" type="TestContainer.FactoryObject.Person, TestContainer" singleton="true" >
+    <property name="name" value="Yahue"></property>
+    <property name="gender" value="男"></property>
+    <property name="eye" value="忧郁的眼神"></property>
+  </object>
+
+  <object id="personname" type="Spring.Objects.Factory.Config.PropertyRetrievingFactoryObject, Spring.Core">
+    <property name="TargetObject" ref="person1"></property>
+    <property name="TargetProperty" value="name"></property>
+  </object>
+
+  <!--静态属性的调用-->
+  <object id="personeye" type="Spring.Objects.Factory.Config.PropertyRetrievingFactoryObject, Spring.Core">
+    <property name="StaticProperty" value="TestContainer.FactoryObject.Person.eye"></property>
+  </object>
+
+  <object id="persongender" type="Spring.Objects.Factory.Config.FieldRetrievingFactoryObject, Spring.Core">
+    <property name="TargetObject" ref="person1"/>
+    <property name="TargetField" value="gender"/>
+  </object>
+
+  <object id="personsay" type="Spring.Objects.Factory.Config.MethodInvokingFactoryObject, Spring.Core">
+    <property name="TargetType" value="TestContainer.FactoryObject.Person, TestContainer"></property>
+    <property name="TargetMethod" value="say"></property>
+    <property name="Arguments">
+      <list>
+        <value>啊</value>
+        <value>大海啊</value>
+        <value>全是水</value>
+      </list>
+    </property>
+  </object>
+
+  <object id="personsay2" type="Spring.Objects.Factory.Config.MethodInvokingFactoryObject, Spring.Core">
+    <property name="TargetObject" ref="person1"></property>
+    <property name="TargetMethod" value="say2"></property>
+    <property name="NamedArguments">
+      <dictionary>
+        <entry key="word1" value="啊！"></entry>
+        <entry key="word2" value="大海啊！"></entry>
+        <entry key="word3" value="全是水！"></entry>
+      </dictionary>
+    </property>
+  </object>
+  
+  <object id="person2" type="TestContainer.FactoryObject.Person1, TestContainer">
+    <property name="age" value="20"></property>
+    <!--<property name="spouse">
+      <object type="TestContainer.FactoryObject.TestObject1, TestContainer">
+        <property name="age" value="21"/>
+      </object>
+    </property>-->
+  </object>
+
+  <object id="age1" type="Spring.Objects.Factory.Config.FieldRetrievingFactoryObject, Spring.Core">
+    <property name="TargetObject" ref="person2"></property>
+    <property name="TargetField" value="age"></property>
+  </object>
+
+  <!--<object id="cultureAware"
+        type="TestContainer.FactoryObject.XmlObjectFactoryTests+MyTestObject, TestContainer">
+    <property name="culture" ref="cultureFactory"/>
+  </object>
+
+  <object id="cultureFactory"
+          type="Spring.Objects.Factory.Config.PropertyRetrievingFactoryObject, Spring.Core">
+    <property name="StaticProperty">
+      <value>System.Globalization.CultureInfo.CurrentUICulture, Mscorlib</value>
+    </property>
+  </object>-->
+
+  <!--<object id="instancePropertyCultureAware"
+        type="TestContainer.FactoryObject.XmlObjectFactoryTests+MyTestObject, TestContainer">
+    <property name="culture" ref="instancePropertyCultureFactory"/>
+  </object>
+
+  <object id="instancePropertyCultureFactory"
+          type="Spring.Objects.Factory.Config.PropertyRetrievingFactoryObject, Spring.Core">
+    <property name="TargetObject" ref="instancePropertyCultureAwareSource"/>
+    <property name="TargetProperty" value="MyDefaultCulture"/>
+
+  </object>
+
+  <object id="instancePropertyCultureAwareSource"
+          type="TestContainer.FactoryObject.XmlObjectFactoryTests+MyTestObject, TestContainer"/>-->
+
+</objects>

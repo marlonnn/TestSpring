@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <alias name="PetStore" alias="PetStore1"/>
+  <object id="PetStore" type="TestContainer.Services.PetStoreService, TestContainer" >
+    <property name="AccountDao" ref="AccountDao"/>
+    <property name="ItemDao" ref="ItemDao"/>
+    <property name="myProp" value=" &#x000a;&#x000d;&#x0009; " />
+    <property name="date" value="6/1/2017"/>
+    <!-- additional collaborators and configuration for this object go here -->
+  </object>
+
+  <object id="InnerService" type="TestContainer.Services.PetStoreService+InnerService, TestContainer">
+    <!-- additional collaborators and configuration for this object go here -->
+  </object>
+  <!-- more object definitions for services go here -->
+</objects>
